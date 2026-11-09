@@ -1,0 +1,57 @@
+# CPython 3.13, linux/x86_64 (manylinux_2_28): 47 exact pins. Artifact metadata verified
+# through official PyPI release JSON.
+# 27 pins are preserved from the verified ARM64 lock
+# (../wheelhouse-20260928/requirements-linux-arm64.lock, SHA-256
+# 2d1cc33ac86b6ee990f2ea3fb310b840b65cd7f7aba4d4300442ea5120a79b79).
+# 20 were added on 2026-09-28 by a fresh uv resolution with those 27 held fixed:
+# openpyxl, scikit-learn, arch, polars, seaborn, ta-lib, backtrader, tqdm and requests from the
+# organizer's finance-bench-sandbox, numba 0.67.0 from the t1-EXAMPLE-bs-greeks-pde unit
+# Dockerfile, and their dependencies.
+
+arch==8.0.0
+backtrader==1.9.78.123
+certifi==2026.7.22
+charset-normalizer==3.5.1
+cloudpickle==3.1.2
+contourpy==1.4.0
+cycler==0.12.1
+et-xmlfile==2.0.0
+fonttools==4.66.0
+idna==3.20
+iniconfig==2.3.0
+joblib==1.6.0
+kiwisolver==1.5.1
+llvmlite==0.49.0
+matplotlib==3.10.7
+narwhals==2.26.0
+numba==0.67.0
+numpy==2.3.4
+openpyxl==3.1.5
+packaging==26.3
+pandas==2.3.3
+patsy==1.0.3
+pillow==12.3.0
+plotly==6.3.1
+pluggy==1.6.0
+polars-runtime-32==1.44.2
+polars==1.44.2
+pyarrow==22.0.0
+pygments==2.21.0
+pyparsing==3.3.3
+pytest-json-report==1.5.0
+pytest-metadata==3.1.1
+pytest-timeout==2.4.0
+pytest==8.4.2
+python-dateutil==2.9.0.post0
+pytz==2026.4
+requests==2.34.2
+scikit-learn==1.9.1
+scipy==1.16.3
+seaborn==0.13.2
+six==1.17.0
+statsmodels==0.14.5
+ta-lib==0.8.1
+threadpoolctl==3.7.0
+tqdm==4.70.1
+tzdata==2026.4
+urllib3==2.8.0

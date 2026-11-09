@@ -1,0 +1,8 @@
+tools/
+tests/
+submission/
+**/__pycache__/
+.pytest_cache/
+*.md
+!ARTIFACT_PROVENANCE.md
+.git

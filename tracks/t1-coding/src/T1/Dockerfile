@@ -1,0 +1,88 @@
+FROM python:3.13.7-slim-bookworm
+
+LABEL qfbench2.interface_version="2.0" \
+      t1.solver_profile="stack14-thin-v1" \
+      t1.profile="local-phase1-diagnostic"
+
+ENV T1_PHASE1_CONTAINER=1 \
+    T1_SOLVER_PROFILE=stack14-thin-v1 \
+    UNIT_BUDGET_SEC=420 \
+    T1_MINIMAL=0 \
+    T1_THIN=1 \
+    T1_THIN_CONTRACT_THINKING=low_effort \
+    T1_THIN_CODE_THINKING=off \
+    T1_THIN_INTERFACE=free \
+    T1_THIN_DIRECT_STEP=0 \
+    T1_THIN_MAX_CONTINUATIONS=3 \
+    T1_THIN_MAX_CONTINUATIONS_UNIT=off \
+    T1_THIN_FEATURES=assert_rerun,clock_fix,complete_first,crash_redraft,fg_normalize,input_fidelity,lib_expose,literal_contract,loop_fix,output_review,outputs_fix,progress_time,redraft_fix,stub_check,task_fidelity \
+    T1_THIN_FINAL_DELIVERY_TRIGGER=A \
+    T1_PLAN=0 \
+    T1_REVIEW=0 \
+    T1_FRESH=0 \
+    T1_SELFCHECK=0 \
+    T1_STAGED=0 \
+    T1_PRECHECK=0 \
+    T1_LIBHINT=0 \
+    T1_CONTRACT=0 \
+    T1_ACCEPT=0 \
+    T1_ADOPT=0 \
+    T1_RAISEGUARD=0 \
+    T1_RUNTIME=0 \
+    T1_REQUIREMENTS=0 \
+    T1_CONTINUATION_BUDGET=0 \
+    T1_S10=0 \
+    T1_S11_CONV=0 \
+    T1_S11_RAISE=0 \
+    T1_S11_LINT=0 \
+    T1_S11_UNION=0 \
+    T1_S11_LIBNOTES=0 \
+    T1_S12_LIB=0 \
+    T1_S12_MECH=0 \
+    T1_S12_POST=0 \
+    T1_S12_INERT=0 \
+    T1_S12_AUDIT=0 \
+    T1_S13_COERCE=0 \
+    T1_S13_REFINE=0 \
+    T1_ROUTE=0 \
+    T1_CARDS=0 \
+    T1_R1THINK=0 \
+    T1_PLANTHINK=0 \
+    T1_PATCHTHINK=0 \
+    T1_CONTRACT2=0 \
+    T1_THINK_FIELD=both \
+    T1_S10_STATE=0 \
+    T1_S10_TAGS=0 \
+    T1_LIBRARY86=1 \
+    T1_REQUEST_SUPERVISOR=1 \
+    PYTHONPATH=/opt \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    HOME=/tmp \
+    MPLCONFIGDIR=/tmp/mpl \
+    MPLBACKEND=Agg \
+    OPENBLAS_NUM_THREADS=1 \
+    OMP_NUM_THREADS=1 \
+    MKL_NUM_THREADS=1
+
+COPY requirements-container.txt /opt/requirements-container.txt
+COPY --from=ghcr.io/astral-sh/uv:0.12.0 /uv /usr/local/bin/uv
+RUN UV_CONCURRENT_DOWNLOADS=8 uv pip install --system --no-cache --only-binary=:all: -r /opt/requirements-container.txt \
+    && python -m pip check
+
+# Explicit copies prevent raw task data, reference answers and tests entering the image.
+COPY t1_phase1/*.py /opt/t1_phase1/
+COPY t1_phase1/component_recipe.py /usr/local/lib/python3.13/site-packages/t1_component_recipe.py
+# The optional library the generated program may import: site-packages, not /opt, because the
+# program runs without PYTHONPATH=/opt (worker_environment).
+COPY qfkit/qfkit/*.py /usr/local/lib/python3.13/site-packages/qfkit/
+COPY qfruntime/qfruntime/*.py /usr/local/lib/python3.13/site-packages/qfruntime/
+COPY scripts/solve /usr/local/bin/solve
+RUN chmod 755 /usr/local/bin/solve \
+    && mkdir -p /app/output /logs/verifier \
+    && chmod 777 /app/output /logs/verifier
+
+WORKDIR /app
+USER 65534:65534
+# No ENTRYPOINT: docker_runner selects either solve or bash for the independent checker.
+CMD ["solve", "--task-dir", "/input", "--out", "/app/output"]

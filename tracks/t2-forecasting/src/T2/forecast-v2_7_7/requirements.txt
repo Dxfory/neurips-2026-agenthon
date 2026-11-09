@@ -1,0 +1,16 @@
+# Frozen runtime versions from the validated V1 environment.
+attrs==26.1.0
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+numpy==2.5.3
+pandas==2.3.3
+pyarrow==25.0.1
+python-dateutil==2.9.0.post0
+pytz==2026.3.post1
+qfbench2-common @ git+https://github.com/Agenthon-2026/Agenthon2026-public.git@v2.4.4#subdirectory=common
+qfbench2-track-forecasting @ git+https://github.com/Agenthon-2026/track2-forecasting-public.git@8da3c76bb4a2fa842f53f4013571b9b6a940bd82
+referencing==0.37.0
+rpds-py==2026.6.3
+scipy==1.18.1
+six==1.17.0
+tzdata==2026.4

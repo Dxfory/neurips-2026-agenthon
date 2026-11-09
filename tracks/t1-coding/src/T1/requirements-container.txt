@@ -1,0 +1,23 @@
+# Direct dependencies pinned for the local Python 3.13 image.
+# Analysis packages follow the organizer's finance-bench-sandbox (without network-only yfinance),
+# plus numba, which the t1-EXAMPLE-bs-greeks-pde unit Dockerfile installs.
+numpy==2.3.4
+pandas==2.3.3
+scipy==1.16.3
+pyarrow==22.0.0
+matplotlib==3.10.7
+statsmodels==0.14.5
+plotly==6.3.1
+pytest==8.4.2
+pytest-json-report==1.5.0
+pytest-timeout==2.4.0
+arch==8.0.0
+backtrader==1.9.78.123
+numba==0.67.0
+openpyxl==3.1.5
+polars==1.44.2
+requests==2.34.2
+scikit-learn==1.9.1
+seaborn==0.13.2
+ta-lib==0.8.1
+tqdm==4.70.1

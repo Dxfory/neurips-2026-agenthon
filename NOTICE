@@ -1,0 +1,31 @@
+Agenthon 2026 — team abc123
+Copyright 2026 team abc123 contributors
+
+This product includes software developed by team abc123 contributors.
+
+Third-party notes (not part of this Work's license grant):
+
+1. Track 3 (Simulation) — linked, not merged.
+   The public fastsim repository (EscapedShark/agenthon2026-t3-neurips) is
+   Apache-2.0 and is referenced by URL only. Its source is not copied into
+   this tree. See tracks/t3-simulation/README.md.
+
+2. Official Agenthon materials — link-only.
+   Official tasks, starter packs, and datasets remain upstream under
+   Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+   and are not redistributed here:
+   - https://github.com/Agenthon-2026/Agenthon2026-public
+   - https://www.agenthon.net/
+
+3. qfbench2-common and related official packages.
+   Track 2 depends on official packages (e.g. qfbench2-common) installed from
+   the upstream track repositories at runtime. Those packages are subject to
+   their own non-commercial terms; they are not redistributed in this tree.
+   Downstream commercial use may be limited by those upstream terms.
+
+4. backtrader (GPL-3.0) — environment-only.
+   Track 1 container environments may install backtrader (GPL-3.0) as a task
+   runtime dependency. This repository's source does not import or redistribute
+   backtrader. If a Docker image that includes GPL components is published,
+   the corresponding source-offer obligations for those components apply to
+   that image; they do not change the Apache-2.0 license of this Work's source.

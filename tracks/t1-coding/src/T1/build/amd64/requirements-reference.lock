@@ -1,0 +1,227 @@
+# Reference resolution: the 27 versions of the independently verified ARM64 baseline held
+# fixed, plus 20 packages added 2026-09-28 by uv (CPython 3.13, manylinux_2_28 x86_64).
+# Generated command omitted to keep workstation paths out of Git.
+arch==8.0.0
+    # via requirements-container.txt
+    # from https://pypi.org/simple
+backtrader==1.9.78.123
+    # via requirements-container.txt
+    # from https://pypi.org/simple
+certifi==2026.7.22
+    # via requests
+    # from https://pypi.org/simple
+charset-normalizer==3.5.1
+    # via requests
+    # from https://pypi.org/simple
+cloudpickle==3.1.2
+    # via joblib
+    # from https://pypi.org/simple
+contourpy==1.4.0
+    # via
+    #   ARM64 baseline
+    #   matplotlib
+    # from https://pypi.org/simple
+cycler==0.12.1
+    # via
+    #   ARM64 baseline
+    #   matplotlib
+    # from https://pypi.org/simple
+et-xmlfile==2.0.0
+    # via openpyxl
+    # from https://pypi.org/simple
+fonttools==4.66.0
+    # via
+    #   ARM64 baseline
+    #   matplotlib
+    # from https://pypi.org/simple
+idna==3.20
+    # via requests
+    # from https://pypi.org/simple
+iniconfig==2.3.0
+    # via
+    #   ARM64 baseline
+    #   pytest
+    # from https://pypi.org/simple
+joblib==1.6.0
+    # via scikit-learn
+    # from https://pypi.org/simple
+kiwisolver==1.5.1
+    # via
+    #   ARM64 baseline
+    #   matplotlib
+    # from https://pypi.org/simple
+llvmlite==0.49.0
+    # via numba
+    # from https://pypi.org/simple
+matplotlib==3.10.7
+    # via
+    #   ARM64 baseline
+    #   requirements-container.txt
+    #   seaborn
+    # from https://pypi.org/simple
+narwhals==2.26.0
+    # via
+    #   ARM64 baseline
+    #   plotly
+    #   scikit-learn
+    # from https://pypi.org/simple
+numba==0.67.0
+    # via requirements-container.txt
+    # from https://pypi.org/simple
+numpy==2.3.4
+    # via
+    #   ARM64 baseline
+    #   requirements-container.txt
+    #   arch
+    #   contourpy
+    #   matplotlib
+    #   numba
+    #   pandas
+    #   patsy
+    #   scikit-learn
+    #   scipy
+    #   seaborn
+    #   statsmodels
+    #   ta-lib
+    # from https://pypi.org/simple
+openpyxl==3.1.5
+    # via requirements-container.txt
+    # from https://pypi.org/simple
+packaging==26.3
+    # via
+    #   ARM64 baseline
+    #   arch
+    #   matplotlib
+    #   patsy
+    #   plotly
+    #   pytest
+    #   statsmodels
+    # from https://pypi.org/simple
+pandas==2.3.3
+    # via
+    #   ARM64 baseline
+    #   requirements-container.txt
+    #   arch
+    #   seaborn
+    #   statsmodels
+    # from https://pypi.org/simple
+patsy==1.0.3
+    # via
+    #   ARM64 baseline
+    #   statsmodels
+    # from https://pypi.org/simple
+pillow==12.3.0
+    # via
+    #   ARM64 baseline
+    #   matplotlib
+    # from https://pypi.org/simple
+plotly==6.3.1
+    # via
+    #   ARM64 baseline
+    #   requirements-container.txt
+    # from https://pypi.org/simple
+pluggy==1.6.0
+    # via
+    #   ARM64 baseline
+    #   pytest
+    # from https://pypi.org/simple
+polars==1.44.2
+    # via requirements-container.txt
+    # from https://pypi.org/simple
+polars-runtime-32==1.44.2
+    # via polars
+    # from https://pypi.org/simple
+pyarrow==22.0.0
+    # via
+    #   ARM64 baseline
+    #   requirements-container.txt
+    # from https://pypi.org/simple
+pygments==2.21.0
+    # via
+    #   ARM64 baseline
+    #   pytest
+    # from https://pypi.org/simple
+pyparsing==3.3.3
+    # via
+    #   ARM64 baseline
+    #   matplotlib
+    # from https://pypi.org/simple
+pytest==8.4.2
+    # via
+    #   ARM64 baseline
+    #   requirements-container.txt
+    #   pytest-json-report
+    #   pytest-metadata
+    #   pytest-timeout
+    # from https://pypi.org/simple
+pytest-json-report==1.5.0
+    # via
+    #   ARM64 baseline
+    #   requirements-container.txt
+    # from https://pypi.org/simple
+pytest-metadata==3.1.1
+    # via
+    #   ARM64 baseline
+    #   pytest-json-report
+    # from https://pypi.org/simple
+pytest-timeout==2.4.0
+    # via
+    #   ARM64 baseline
+    #   requirements-container.txt
+    # from https://pypi.org/simple
+python-dateutil==2.9.0.post0
+    # via
+    #   ARM64 baseline
+    #   matplotlib
+    #   pandas
+    # from https://pypi.org/simple
+pytz==2026.4
+    # via
+    #   ARM64 baseline
+    #   pandas
+    # from https://pypi.org/simple
+requests==2.34.2
+    # via requirements-container.txt
+    # from https://pypi.org/simple
+scikit-learn==1.9.1
+    # via requirements-container.txt
+    # from https://pypi.org/simple
+scipy==1.16.3
+    # via
+    #   ARM64 baseline
+    #   requirements-container.txt
+    #   arch
+    #   scikit-learn
+    #   statsmodels
+    # from https://pypi.org/simple
+seaborn==0.13.2
+    # via requirements-container.txt
+    # from https://pypi.org/simple
+six==1.17.0
+    # via
+    #   ARM64 baseline
+    #   python-dateutil
+    # from https://pypi.org/simple
+statsmodels==0.14.5
+    # via
+    #   ARM64 baseline
+    #   requirements-container.txt
+    #   arch
+    # from https://pypi.org/simple
+ta-lib==0.8.1
+    # via requirements-container.txt
+    # from https://pypi.org/simple
+threadpoolctl==3.7.0
+    # via scikit-learn
+    # from https://pypi.org/simple
+tqdm==4.70.1
+    # via requirements-container.txt
+    # from https://pypi.org/simple
+tzdata==2026.4
+    # via
+    #   ARM64 baseline
+    #   pandas
+    # from https://pypi.org/simple
+urllib3==2.8.0
+    # via requests
+    # from https://pypi.org/simple

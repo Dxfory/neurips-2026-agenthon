@@ -1,0 +1,25 @@
+#!/usr/local/bin/python
+"""Direct Python entry point: no token-bearing shell remains as a parent."""
+import argparse
+from pathlib import Path
+import sys
+
+sys.path.insert(0, '/opt')
+from t1_phase1.baseline import solve, solve_budget
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Track 1 baseline: generate, run and repair one program')
+    parser.add_argument('--task-dir', required=True, type=Path)
+    parser.add_argument('--out', required=True, type=Path)
+    args = parser.parse_args()
+    # The platform passes no budget: all units share one 43,200 s stage clock, so solve takes the image's
+    # UNIT_BUDGET_SEC under the card's [agent].timeout_sec ceiling. A local harness may set T1_TIMEOUT_SEC,
+    # clamped to the stage cap so that no caller can give one unit more than its share.
+    budget, source = solve_budget(args.task_dir)
+    solve(args.task_dir, args.out, budget_sec=budget, budget_source=source)
+    return 0  # the status file is written; scoring reads the outputs, never this exit code
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
